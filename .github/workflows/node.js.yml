@@ -32,10 +32,15 @@ jobs:
       uses: actions/cache@v2.1.4
       with:
         # A list of files, directories, and wildcard patterns to cache and restore
-        path: public/
+        path: node-modules/
         # An explicit key for restoring and saving the cache
-        key: main-$(date +'%Y-%m-%d')
+        key: main-v1-$(date +'%Y-%m-%d')
         # An ordered list of keys to use for restoring the cache if no cache hit occurred for key
-        restore-keys: main-$(date +'%Y-%m-%d') main
+        restore-keys: main-v1-$(date +'%Y-%m-%d') main
         # The chunk size used to split up large files during upload, in bytes
         #upload-chunk-size: # optional
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: html
+        path: public/
