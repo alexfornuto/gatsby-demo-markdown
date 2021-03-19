@@ -36,6 +36,6 @@ jobs:
         # An explicit key for restoring and saving the cache
         key: main-$(date +'%Y-%m-%d')
         # An ordered list of keys to use for restoring the cache if no cache hit occurred for key
-        restore-keys: main-$(date +'%Y-%m-%d'), main
+        restore-keys: main-$(date +'%Y-%m-%d') main
         # The chunk size used to split up large files during upload, in bytes
         #upload-chunk-size: # optional
