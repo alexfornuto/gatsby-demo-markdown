@@ -12,20 +12,6 @@ spec:
     tier: frontend
   type: LoadBalancer
 ---
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: nginx-pv-claim
-  labels:
-    app: webhost
-    uses: nginx
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 20Gi
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -52,10 +38,3 @@ spec:
         ports:
           - containerPort: 80
             name: nginx
-        volumeMounts:
-          - mountPath: /usr/share/nginx/html
-            name: nginx-persistent-storage
-      volumes:
-      - name: nginx-persistent-storage
-        persistentVolumeClaim:
-          claimName: nginx-pv-claim
