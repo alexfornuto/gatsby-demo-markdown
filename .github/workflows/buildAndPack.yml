@@ -39,10 +39,21 @@ jobs:
         restore-keys: main-v1-$(date +'%Y-%m-%d') main
         # The chunk size used to split up large files during upload, in bytes
         #upload-chunk-size: # optional
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag alexf-gatsby-demo:$(date +%s)
-    - name: Archive production artifacts
-      uses: actions/upload-artifact@v2
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
       with:
-        name: html
-        path: public/
+        username: ${{ secrets.DOCKERHUB_USERNAME}}
+        password: ${{ secrets.DOCKERHUB_TOKEN}}
+    - name: Build and Push The Docker Image
+      id: docker_build
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        tags: user/demo:latest
+    - name: Image Digest
+      run: echo ${{ steps.docker_build.outputs.digest }}
+#    - name: Archive production artifacts
+#      uses: actions/upload-artifact@v2
+#      with:
+#        name: html
+#        path: public/
