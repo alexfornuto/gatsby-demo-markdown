@@ -18,7 +18,7 @@ metadata:
   name: nginx
   labels:
     app: webhost
-    uses: nginx
+    uses: gatsby
 spec:
   replicas: 1
   selector:
@@ -33,8 +33,8 @@ spec:
         uses: nginx
     spec:
       containers:
-      - image: nginx
-        name: nginx
+      - image: alexfornuto/demo:latest
+        name: gatsby
         ports:
           - containerPort: 80
             name: nginx
