@@ -1,6 +1,6 @@
 # Gatsby Markdown Starter
 
-W-w-w-w-WEBHOOKS
+c'mon... webooks!
 
 Boilerplate for markdown-based website (Documentation, Blog, etc.).  Based on [gatsby-default-starter](https://github.com/gatsbyjs/gatsby-starter-default).
 
