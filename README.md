@@ -1,6 +1,6 @@
 # Gatsby Markdown Starter
 
-WEB ALL THE HOOOKS!     
+If this webhook doesn't trigger I swear to Zord...
 
 Boilerplate for markdown-based website (Documentation, Blog, etc.).  Based on [gatsby-default-starter](https://github.com/gatsbyjs/gatsby-starter-default).
 
