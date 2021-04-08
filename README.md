@@ -1,6 +1,6 @@
 # Gatsby Markdown Starter
 
-If this webhook doesn't trigger I swear to Zord...
+If this webhook doesn't trigger I swear to Zordon...
 
 Boilerplate for markdown-based website (Documentation, Blog, etc.).  Based on [gatsby-default-starter](https://github.com/gatsbyjs/gatsby-starter-default).
 
